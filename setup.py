@@ -17,7 +17,7 @@ def _get_r_home(r_bin = "R"):
         warnings.warn("The environment variable R_ENVIRON or R_ENVIRON_USER is set. Differences between their settings during build time and run time may lead to issues when using rpy2.")
 
     try:
-        r_home = subprocess.check_output((r_bin, "RHOME"),
+        r_home = subprocess.check_output(("/app/bin/R", "RHOME"),
                                          universal_newlines=True)
     except:
         raise SystemExit("Error: Tried to guess R's HOME but no command (%s) in the PATH." % r_bin)
