@@ -105,10 +105,7 @@ class RExec(object):
     """ Compilation-related configuration parameters used by R. """
 
     def __init__(self, r_home):
-        if sys.platform == "win32" and "64 bit" in sys.version:
-            r_exec = os.path.join(r_home, 'bin', 'x64', 'R')
-        else:
-            r_exec = os.path.join(r_home, 'bin', 'R')
+        r_exec = os.path.join('/app', 'bin', 'R')
         self._r_exec = r_exec
         self._version = None
 
